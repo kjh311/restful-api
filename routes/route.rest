@@ -9,7 +9,7 @@ GET http://localhost:3000/subscribers
 // the 3 #s seperate the api calls
 ### 
 # get one
-GET http://localhost:3000/subscribers/16
+GET http://localhost:3000/subscribers/606f53c89d840606cca1d449
 
 ###
 #post 1

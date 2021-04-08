@@ -1,7 +1,7 @@
 "use strict";
 
 const express = require('express')
-const subscriber = require('../models/subscriber')
+// const subscriber = require('../models/subscriber')
 const router = express.Router()
 const Subscriber = require('../models/subscriber')
 
@@ -23,8 +23,8 @@ router.get('/', async (req, res) => {
 
 // getting one
 // '/:id' returns a specific db Object, matching the number after '/'
-router.get('/:id', (req, res) => {
-    res.send(req.params.id)
+router.get('/:id', getSubscriber, (req, res) => {
+    res.send(res.subscriber.name)
 })
 
 // Creating one
@@ -53,6 +53,23 @@ router.patch('/:id', (req, res) => {
 router.delete('/id', (req, res) => {
 
 })
+
+
+//middleware function
+async function getSubscriber(req, res, next) {
+    let subscriber
+    try {
+        subscriber = await Subscriber.findById(req.params.id)
+        if (subscriber == null) {
+            return res.status(404).json({ message: 'Cannont find subscriber' })
+        }
+    } catch (err) {
+        return res.status(500).json({ message: err.message })
+    }
+
+    res.subscriber = subscriber
+    next()
+}
 
 
 module.exports = router
