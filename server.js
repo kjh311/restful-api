@@ -1,6 +1,7 @@
 // Express is a Node.js framework
 const express = require('express')
 const app = express()
+const port = 3000
 
 // Mongoose.js makes it easier for Node.js and MongoDB to communicate
 const mongoose = require('mongoose')
@@ -22,4 +23,4 @@ app.use(express.json())
 const subscriberRouter = require('./routes/subscribers')
 app.use('/subscribers', subscriberRouter)
 
-app.listen(3000, () => console.log('The server has started!!'))
+app.listen(port, () => console.log(`The server has started on ${port}!!`))

@@ -1,5 +1,7 @@
 # create api calls:
 
+
+
 # Get all
 GET http://localhost:3000/subscribers
 
@@ -7,4 +9,14 @@ GET http://localhost:3000/subscribers
 // the 3 #s seperate the api calls
 ### 
 # get one
-GET http://localhost:3000/localhost:3000/subscribers/1
+GET http://localhost:3000/subscribers/16
+
+###
+#post 1
+POST http://localhost:3000/subscribers/
+Content-Type: application/json
+
+{
+    "name": "Amazing",
+    "subscribedToChannel": "Web Dev Simplified"
+}

@@ -4,9 +4,10 @@
   "description": "Building a simple Rest API using https://www.youtube.com/watch?v=fgTGADljAeg as a tutorial.",
   "main": "index.js",
   "scripts": {
-    "devStart": "nodemon server.js",
-    "database": "brew services start mongodb-community@4.4",
-    "restartDatabse": "brew services restart mongodb-community"
+    "startApp": "nodemon server.js",
+    "startDB": "brew services start mongodb-community@4.4",
+    "restartDB": "brew services restart mongodb-community",
+    "stopDB": "brew services stop mongodb-community@4.4"
   },
   "repository": {
     "type": "git",
