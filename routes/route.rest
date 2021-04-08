@@ -1,0 +1,10 @@
+# create api calls:
+
+# Get all
+GET http://localhost:3000/subscribers
+
+
+// the 3 #s seperate the api calls
+### 
+# get one
+GET http://localhost:3000/localhost:3000/subscribers/1
